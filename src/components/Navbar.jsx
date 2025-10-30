@@ -1,7 +1,8 @@
 import React, { useEffect, useState,useRef } from "react";
 import { Menu,X } from "lucide-react";
 import { Loader,Github,Linkedin } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
+
 
 const Navbar = () => {
   const [open, setopen] = useState(false)
@@ -16,10 +17,9 @@ const Navbar = () => {
       </div>
       <div className="opacity-50 text-gray-400 text-2xl font-semibold flex gap-3 items-center ">
         <Link to="Home" className="p-3 cursor-pointer hover:text-white" smooth={true} duration={500}>Home</Link>
-        <Link to="Skills" className="p-3 cursor-pointer hover:text-white" smooth={true} duration={500}>Skills</Link>
+        <Link to="About" className="p-3 cursor-pointer hover:text-white" smooth={true} duration={500}>About</Link>
         <Link to="Projects" className="p-3 cursor-pointer hover:text-white" smooth={true} duration={500}>Projects</Link>
-        <Link to="Education" className="p-3 cursor-pointer hover:text-white" smooth={true} duration={500}>Education</Link>
-        <Link to="Contact" className="p-3 cursor-pointer hover:text-white" smooth={true} duration={500}>Contact</Link>
+        <Link to="Team" className="p-3 cursor-pointer hover:text-white" smooth={true} duration={500}>Team</Link>
       </div>
     </div>
     <div className="flex justify-between w-full z-[99]  px-3 fixed top-5 lg:hidden block  items-center">
@@ -36,10 +36,9 @@ const Navbar = () => {
     <div className="relative flex items-center justify-center">
     {open&&(<div className="fixed top-24 rounded-2xl w-[90%] bg-gray-800 transition-all z-50  text-gray-400 text-2xl font-semibold flex flex-col justify-center items-center ">
         <Link to="Home" className="p-3 cursor-pointer hover:text-white" smooth={true} duration={500}>Home</Link>
-        <Link to="Skills" className="p-3 cursor-pointer hover:text-white" smooth={true} duration={500}>Skills</Link>
+        <Link to="About" className="p-3 cursor-pointer hover:text-white" smooth={true} duration={500}>About</Link>
         <Link to="Projects" className="p-3 cursor-pointer hover:text-white" smooth={true} duration={500}>Projects</Link>
-        <Link to="Education" className="p-3 cursor-pointer hover:text-white" smooth={true} duration={500}>Education</Link>
-        <Link to="Contact" className="p-3 cursor-pointer hover:text-white" smooth={true} duration={500}>Contact</Link>
+        <Link to="Team" className="p-3 cursor-pointer hover:text-white" smooth={true} duration={500}>Team</Link>
     </div>)}
 
     </div>
