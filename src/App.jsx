@@ -12,7 +12,6 @@ const App = () => {
       name: "E-Commerce Web App",
       description:
         "A full-stack e-commerce application with user authentication, product management, and shopping cart functionality.",
-      technologies: ["React", "Express", "MongoDB", "Node.js"],
       image: "/images/ecommerce.png",
       github: "https://github.com/yourusername/ecommerce-app",
       liveDemo: "https://ecommerce-app.vercel.app",
@@ -22,7 +21,6 @@ const App = () => {
       name: "Portfolio Website",
       description:
         "A personal portfolio website showcasing my skills, projects, and contact information.",
-      technologies: ["React", "Tailwind CSS", "Framer Motion"],
       image: "/images/portfolio.png",
       github: "https://github.com/yourusername/portfolio",
       liveDemo: "https://hatimmalak.vercel.app",
@@ -32,7 +30,6 @@ const App = () => {
       name: "Weather Forecast App",
       description:
         "A simple weather application that provides real-time weather updates and forecasts using an open API.",
-      technologies: ["HTML", "CSS", "JavaScript", "OpenWeather API"],
       image: "/images/weather.png",
       github: "https://github.com/yourusername/weather-app",
       liveDemo: "https://weatherapp-demo.netlify.app",
@@ -42,7 +39,6 @@ const App = () => {
       name: "Chat Application",
       description:
         "A real-time chat application allowing users to send and receive messages instantly with WebSocket technology.",
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
       image: "/images/chatapp.png",
       github: "https://github.com/yourusername/chat-app",
       liveDemo: "https://chatapp-demo.vercel.app",
@@ -52,7 +48,6 @@ const App = () => {
       name: "To-Do List App",
       description:
         "A minimalistic to-do list web app where users can add, edit, and delete tasks with data persistence.",
-      technologies: ["React", "LocalStorage"],
       image: "/images/todo.png",
       github: "https://github.com/yourusername/todo-app",
       liveDemo: "https://todoapp-demo.vercel.app",
@@ -97,10 +92,11 @@ const App = () => {
         </Element>
 
         <Element
-          className="w-full text-center h-screen pt-24 flex justify-center items-center flex-col gap-10"
+          className="w-full text-center h-screen pt-24 flex justify-center items-center flex-col gap-3"
           name="About"
         >
           <h1 className="text-5xl text-purple-500 font-bold">About</h1>
+           <div className="border border-white w-[150px] mb-20"></div>
           <p className="bg-gray-800 p-5 w-[60%] h-[77%] rounded-lg overflow-auto text-white text-2xl flex justify-center items-center leading-relaxed">
             Echelon Dev Society is a community of passionate innovators,
             developers, and problem solvers driven by curiosity and powered by
@@ -127,17 +123,35 @@ const App = () => {
           </p>
         </Element>
         <Element
-          className="w-full text-center h-screen pt-20 flex justify-center items-center flex-col gap-10"
+          className="w-full text-center h-screen pt-20 flex justify-center items-center flex-col gap-3"
           name="Projects"
         >
           <h1 className="text-5xl text-purple-500 font-bold">Projects</h1>
-          <div></div>
+          <div className="border border-white w-[150px]"></div>
+          <div className="flex flex-col lg:flex-row justify-center gap-10 items-center w-full h-[75%] ">
+            {projects.map((pro)=>(
+              <div className="flex flex-col bg-gray-600/30 h-[500px] w-[300px] ">
+                <div className="w-full h-[40%]">
+                  <img src={pro.image} alt="image" />
+                </div>
+                <div className="flex flex-col justify-between items-start gap-5 w-full h-[60%] p-2">
+                  <h1 className="text-purple-500 text-3xl font-bold text-start">{pro.name}</h1>
+                  <p className="text-white text-xl font-medium w-full h-[30%] text-start">{pro.description}</p>
+                  <div className="flex justify-center w-full items-center gap-5 pt-10">
+                    <a href={pro.github} className="text-white bg-purple-500 text-2xl font-semibold p-2 rounded-lg">Github</a>
+                    <a href={pro.liveDemo} className="text-white bg-purple-500 text-2xl font-semibold p-2 rounded-lg">Live Demo</a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </Element>
         <Element
-          className="w-full text-center h-screen pt-12 flex justify-center items-center flex-col gap-24"
+          className="w-full text-center h-screen pt-12 flex justify-center items-center flex-col gap-3"
           name="Team"
         >
           <h1 className="text-5xl text-purple-500 font-bold">Team</h1>
+          <div className="border border-white w-[150px] mb-24"></div>
           <div className="relative h-[50%] w-full flex  items-center ">
             <div className="w-[50%] flex justify-center items-center ">
               <div className="flex flex-col gap-6">
