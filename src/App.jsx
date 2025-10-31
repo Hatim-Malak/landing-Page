@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import DotGrid from "./components/DotGrid.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Spline from "@splinetool/react-spline";
@@ -6,6 +6,14 @@ import { Element } from "react-scroll";
 import CardSwap, { Card } from "./components/CardSwap.jsx";
 
 const App = () => {
+  const [theme, settheme] = useState("dark")
+  const handletheme = (data) =>{
+    settheme(data)
+  }
+  useEffect(() => {
+    
+  }, [theme])
+  
   const projects = [
     {
       id: 1,
@@ -55,12 +63,12 @@ const App = () => {
   ];
 
   return (
-    <div className="relative w-full bg-black overflow-hidden">
+    <div className={`relative w-full overflow-hidden ${theme === "dark"?"bg-black":"bg-white"}`}>
       <div className="fixed top-0 left-0 w-full h-full z-0">
         <DotGrid
           dotSize={3}
           gap={25}
-          baseColor="#808080"
+          baseColor={theme === "dark"?"#808080":"#000000"}
           activeColor="#5227FF"
           proximity={120}
           shockRadius={200}
@@ -72,16 +80,16 @@ const App = () => {
 
       <div className="relative z-20 flex flex-col justify-center items-center font-bold w-full">
         <div className="w-full flex relative justify-center items-center">
-          <Navbar />
+          <Navbar sendData = {handletheme} />
         </div>
         <Element className="flex w-full h-screen pt-24" name="Home">
           <div className="w-[50%] flex flex-col justify-center items-center">
             <div className="flex gap-5 flex-col justify-center items-start">
-              <h1 className="text-5xl text-white font-bold">Hi, Welcome to</h1>
+              <h1 className={`text-5xl ${theme !== "dark"?"text-black":"text-white"} font-bold`}>Hi, Welcome to</h1>
               <h1 className="text-7xl font-bold text-purple-500">
                 Echelon Dev Society
               </h1>
-              <p className="text-4xl text-white font-semibold">
+              <p className={`text-4xl ${theme !== "dark"?"text-black":"text-white"} font-semibold`}>
                 Driven by curiosity, powered by code
               </p>
             </div>
@@ -96,7 +104,7 @@ const App = () => {
           name="About"
         >
           <h1 className="text-5xl text-purple-500 font-bold">About</h1>
-           <div className="border border-white w-[150px] mb-20"></div>
+           <div className={`border ${theme !== "dark"?"border-black":"border-white"} w-[150px] mb-20`}></div>
           <p className="bg-gray-800 p-5 w-[60%] h-[77%] rounded-lg overflow-auto text-white text-2xl flex justify-center items-center leading-relaxed">
             Echelon Dev Society is a community of passionate innovators,
             developers, and problem solvers driven by curiosity and powered by
@@ -127,7 +135,7 @@ const App = () => {
           name="Projects"
         >
           <h1 className="text-5xl text-purple-500 font-bold">Projects</h1>
-          <div className="border border-white w-[150px]"></div>
+          <div className={`border ${theme !== "dark"?"border-black":"border-white"} w-[150px]`}></div>
           <div className="flex flex-col lg:flex-row justify-center gap-10 items-center w-full h-[75%] ">
             {projects.map((pro)=>(
               <div className="flex flex-col bg-gray-600/30 h-[500px] w-[300px] ">
@@ -136,10 +144,10 @@ const App = () => {
                 </div>
                 <div className="flex flex-col justify-between items-start gap-5 w-full h-[60%] p-2">
                   <h1 className="text-purple-500 text-3xl font-bold text-start">{pro.name}</h1>
-                  <p className="text-white text-xl font-medium w-full h-[30%] text-start">{pro.description}</p>
+                  <p className={`${theme !== "dark"?"text-black":"text-white"} text-xl font-bold w-full h-[30%] text-start`}>{pro.description}</p>
                   <div className="flex justify-center w-full items-center gap-5 pt-10">
-                    <a href={pro.github} className="text-white bg-purple-500 text-2xl font-semibold p-2 rounded-lg">Github</a>
-                    <a href={pro.liveDemo} className="text-white bg-purple-500 text-2xl font-semibold p-2 rounded-lg">Live Demo</a>
+                    <a href={pro.github} className={`${theme !== "dark"?"text-black":"text-white"} bg-purple-500 text-2xl font-semibold p-2 rounded-lg`}>Github</a>
+                    <a href={pro.liveDemo} className={`${theme !== "dark"?"text-black":"text-white"} bg-purple-500 text-2xl font-semibold p-2 rounded-lg`}>Live Demo</a>
                   </div>
                 </div>
               </div>
@@ -151,12 +159,12 @@ const App = () => {
           name="Team"
         >
           <h1 className="text-5xl text-purple-500 font-bold">Team</h1>
-          <div className="border border-white w-[150px] mb-24"></div>
+          <div className={`border ${theme !== "dark"?"border-black":"border-white"} w-[150px] mb-24`}></div>
           <div className="relative h-[50%] w-full flex  items-center ">
             <div className="w-[50%] flex justify-center items-center ">
               <div className="flex flex-col gap-6">
               <h1 className="text-6xl text-purple-500 font-bold text-start ">Team Members:</h1>
-              <h1 className="text-5xl text-white font-bold">Meet the Minds Behind the Vision</h1>
+              <h1 className={`text-5xl ${theme !== "dark"?"text-black":"text-white"} font-bold`}>Meet the Minds Behind the Vision</h1>
               </div>
             </div>
             <CardSwap
