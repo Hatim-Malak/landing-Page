@@ -3,8 +3,62 @@ import DotGrid from "./components/DotGrid.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Spline from "@splinetool/react-spline";
 import { Element } from "react-scroll";
+import CardSwap, { Card } from "./components/CardSwap.jsx";
 
 const App = () => {
+  const projects = [
+    {
+      id: 1,
+      name: "E-Commerce Web App",
+      description:
+        "A full-stack e-commerce application with user authentication, product management, and shopping cart functionality.",
+      technologies: ["React", "Express", "MongoDB", "Node.js"],
+      image: "/images/ecommerce.png",
+      github: "https://github.com/yourusername/ecommerce-app",
+      liveDemo: "https://ecommerce-app.vercel.app",
+    },
+    {
+      id: 2,
+      name: "Portfolio Website",
+      description:
+        "A personal portfolio website showcasing my skills, projects, and contact information.",
+      technologies: ["React", "Tailwind CSS", "Framer Motion"],
+      image: "/images/portfolio.png",
+      github: "https://github.com/yourusername/portfolio",
+      liveDemo: "https://hatimmalak.vercel.app",
+    },
+    {
+      id: 3,
+      name: "Weather Forecast App",
+      description:
+        "A simple weather application that provides real-time weather updates and forecasts using an open API.",
+      technologies: ["HTML", "CSS", "JavaScript", "OpenWeather API"],
+      image: "/images/weather.png",
+      github: "https://github.com/yourusername/weather-app",
+      liveDemo: "https://weatherapp-demo.netlify.app",
+    },
+    {
+      id: 4,
+      name: "Chat Application",
+      description:
+        "A real-time chat application allowing users to send and receive messages instantly with WebSocket technology.",
+      technologies: ["React", "Node.js", "Socket.io", "MongoDB"],
+      image: "/images/chatapp.png",
+      github: "https://github.com/yourusername/chat-app",
+      liveDemo: "https://chatapp-demo.vercel.app",
+    },
+    {
+      id: 5,
+      name: "To-Do List App",
+      description:
+        "A minimalistic to-do list web app where users can add, edit, and delete tasks with data persistence.",
+      technologies: ["React", "LocalStorage"],
+      image: "/images/todo.png",
+      github: "https://github.com/yourusername/todo-app",
+      liveDemo: "https://todoapp-demo.vercel.app",
+    },
+  ];
+
   return (
     <div className="relative w-full bg-black overflow-hidden">
       <div className="fixed top-0 left-0 w-full h-full z-0">
@@ -47,7 +101,7 @@ const App = () => {
           name="About"
         >
           <h1 className="text-5xl text-purple-500 font-bold">About</h1>
-          <p className="bg-gray-600/30  p-5 w-[60%] h-[77%] rounded-lg overflow-auto text-white text-2xl flex justify-center items-center leading-relaxed">
+          <p className="bg-gray-800 p-5 w-[60%] h-[77%] rounded-lg overflow-auto text-white text-2xl flex justify-center items-center leading-relaxed">
             Echelon Dev Society is a community of passionate innovators,
             developers, and problem solvers driven by curiosity and powered by
             technology. Our club serves as a platform where creative minds come
@@ -71,6 +125,59 @@ const App = () => {
             challenges of the digital world. Together, we build not just
             projects, but futures.
           </p>
+        </Element>
+        <Element
+          className="w-full text-center h-screen pt-20 flex justify-center items-center flex-col gap-10"
+          name="Projects"
+        >
+          <h1 className="text-5xl text-purple-500 font-bold">Projects</h1>
+          <div></div>
+        </Element>
+        <Element
+          className="w-full text-center h-screen pt-12 flex justify-center items-center flex-col gap-24"
+          name="Team"
+        >
+          <h1 className="text-5xl text-purple-500 font-bold">Team</h1>
+          <div className="relative h-[50%] w-full flex  items-center ">
+            <div className="w-[50%] flex justify-center items-center ">
+              <div className="flex flex-col gap-6">
+              <h1 className="text-6xl text-purple-500 font-bold text-start ">Team Members:</h1>
+              <h1 className="text-5xl text-white font-bold">Meet the Minds Behind the Vision</h1>
+              </div>
+            </div>
+            <CardSwap
+              cardDistance={60}
+              verticalDistance={70}
+              delay={2000}
+              pauseOnHover={true}
+              className="w-[50%]"
+            >
+              <Card className="text-white w-full h-full">
+                <h3 className="h-[20%] w-full pt-5 text-xl font-bold">Technical Head</h3>
+                <div className="h-[80%] w-full">
+                  <img src="srk.webp" alt="srk" className="h-full w-full object-cover" />
+                </div>
+              </Card>
+              <Card className="text-white w-full h-full">
+                <h3 className="h-[20%] w-full pt-5 text-xl font-bold">Management Head</h3>
+                <div className="h-[80%] w-full">
+                  <img src="salman.webp" alt="srk" className="h-full w-full object-cover" />
+                </div>
+              </Card>
+              <Card className="text-white w-full h-full">
+                <h3 className="h-[20%] w-full pt-5 text-xl font-bold">Event Head</h3>
+                <div className="h-[80%] w-full">
+                  <img src="amir.webp" alt="srk" className="h-full w-full object-cover" />
+                </div>
+              </Card>
+              <Card className="text-white w-full h-full">
+                <h3 className="h-[20%] w-full pt-5 text-xl font-bold">Core Team</h3>
+                <div className="h-[80%] w-full">
+                  <img src="rithik.webp" alt="srk" className="h-full w-full object-cover" />
+                </div>
+              </Card>
+            </CardSwap>
+          </div>
         </Element>
       </div>
     </div>
