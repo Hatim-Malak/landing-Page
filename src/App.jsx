@@ -21,7 +21,7 @@ const App = () => {
       name: "E-Commerce Web App",
       description:
         "A full-stack e-commerce application with user authentication, product management, and shopping cart functionality.",
-      image: "/images/ecommerce.png",
+      image: "./e-commerce.webp",
       github: "https://github.com/yourusername/ecommerce-app",
       liveDemo: "https://ecommerce-app.vercel.app",
     },
@@ -30,7 +30,7 @@ const App = () => {
       name: "Portfolio Website",
       description:
         "A personal portfolio website showcasing my skills, projects, and contact information.",
-      image: "/images/portfolio.png",
+      image: "./portfolio.png",
       github: "https://github.com/yourusername/portfolio",
       liveDemo: "https://hatimmalak.vercel.app",
     },
@@ -39,7 +39,7 @@ const App = () => {
       name: "Weather Forecast App",
       description:
         "A simple weather application that provides real-time weather updates and forecasts using an open API.",
-      image: "/images/weather.png",
+      image: "./weather.png",
       github: "https://github.com/yourusername/weather-app",
       liveDemo: "https://weatherapp-demo.netlify.app",
     },
@@ -48,7 +48,7 @@ const App = () => {
       name: "Chat Application",
       description:
         "A real-time chat application allowing users to send and receive messages instantly with WebSocket technology.",
-      image: "/images/chatapp.png",
+      image: "./chat.png",
       github: "https://github.com/yourusername/chat-app",
       liveDemo: "https://chatapp-demo.vercel.app",
     },
@@ -57,7 +57,7 @@ const App = () => {
       name: "To-Do List App",
       description:
         "A minimalistic to-do list web app where users can add, edit, and delete tasks with data persistence.",
-      image: "/images/todo.png",
+      image: "./todo.jpg",
       github: "https://github.com/yourusername/todo-app",
       liveDemo: "https://todoapp-demo.vercel.app",
     },
@@ -106,7 +106,7 @@ const App = () => {
         >
           <h1 className="text-5xl text-purple-500 font-bold">About</h1>
            <div className={`border ${theme !== "dark"?"border-black":"border-white"} w-[150px] mb-20`}></div>
-          <p className="bg-gray-800 p-5 lg:w-[60%] w-[95%] lg:h-[77%] h-[77%] rounded-lg overflow-auto text-white text-2xl flex justify-center items-center leading-relaxed">
+          <p className={`bg-gray-600/30 p-5 lg:w-[60%] w-[95%] lg:h-[77%] h-[77%] rounded-lg overflow-auto text-2xl flex justify-center items-center font-medium leading-relaxed ${theme !== "dark"?"text-black":"text-white"}`}>
             Echelon Dev Society is a community of passionate innovators,
             developers, and problem solvers driven by curiosity and powered by
             technology. Our club serves as a platform where creative minds come
