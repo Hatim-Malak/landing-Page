@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar.jsx";
 import Spline from "@splinetool/react-spline";
 import { Element } from "react-scroll";
 import CardSwap, { Card } from "./components/CardSwap.jsx";
+import Footer from "./components/Footer.jsx"
 
 const App = () => {
   const [theme, settheme] = useState("dark")
@@ -82,8 +83,8 @@ const App = () => {
         <div className="w-full flex relative justify-center items-center">
           <Navbar sendData = {handletheme} />
         </div>
-        <Element className="flex w-full h-screen pt-24" name="Home">
-          <div className="w-[50%] flex flex-col justify-center items-center">
+        <Element className="flex lg:flex-row flex-col-reverse p-5 w-full h-screen pt-24" name="Home">
+          <div className="lg:w-[50%] lg:h-full w-full h-1/2 flex flex-col justify-center items-center">
             <div className="flex gap-5 flex-col justify-center items-start">
               <h1 className={`text-5xl ${theme !== "dark"?"text-black":"text-white"} font-bold`}>Hi, Welcome to</h1>
               <h1 className="text-7xl font-bold text-purple-500">
@@ -94,7 +95,7 @@ const App = () => {
               </p>
             </div>
           </div>
-          <div className="w-1/2 h-full flex justify-center items-start">
+          <div className="lg:w-1/2 lg:h-full w-full h-1/2 flex justify-center items-start">
             <Spline scene="https://prod.spline.design/mpyCYatHMjWLmBmL/scene.splinecode" />
           </div>
         </Element>
@@ -105,7 +106,7 @@ const App = () => {
         >
           <h1 className="text-5xl text-purple-500 font-bold">About</h1>
            <div className={`border ${theme !== "dark"?"border-black":"border-white"} w-[150px] mb-20`}></div>
-          <p className="bg-gray-800 p-5 w-[60%] h-[77%] rounded-lg overflow-auto text-white text-2xl flex justify-center items-center leading-relaxed">
+          <p className="bg-gray-800 p-5 lg:w-[60%] w-[95%] lg:h-[77%] h-[77%] rounded-lg overflow-auto text-white text-2xl flex justify-center items-center leading-relaxed">
             Echelon Dev Society is a community of passionate innovators,
             developers, and problem solvers driven by curiosity and powered by
             technology. Our club serves as a platform where creative minds come
@@ -131,7 +132,7 @@ const App = () => {
           </p>
         </Element>
         <Element
-          className="w-full text-center h-screen pt-20 flex justify-center items-center flex-col gap-3"
+          className="w-full text-center min-h-screen pt-20 flex justify-center items-center flex-col gap-3"
           name="Projects"
         >
           <h1 className="text-5xl text-purple-500 font-bold">Projects</h1>
@@ -200,6 +201,9 @@ const App = () => {
               </Card>
             </CardSwap>
           </div>
+        </Element>
+        <Element className="w-full">
+          <Footer/>
         </Element>
       </div>
     </div>

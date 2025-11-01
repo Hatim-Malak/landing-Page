@@ -82,7 +82,7 @@ const Navbar = ({ sendData }) => {
       </div>
       <div className="relative flex items-center justify-center">
         {open && (
-          <div className="fixed top-24 rounded-2xl w-[90%] bg-gray-800 transition-all z-50  text-gray-400 text-2xl font-semibold flex flex-col justify-center items-center ">
+          <div className="fixed top-24 rounded-2xl w-[90%] bg-gray-800 transition-all z-50   text-gray-400 text-2xl font-semibold flex flex-col justify-center items-center ">
             <Link
               to="Home"
               className="p-3 cursor-pointer hover:text-white"
@@ -115,11 +115,12 @@ const Navbar = ({ sendData }) => {
             >
               Team
             </Link>
-            <div>
+            <div className="p-3 cursor-pointer hover:text-white">
               <select
                 name="theme"
                 id="theme"
                 onChange={handleChange}
+                className="text-gray-400 bg-gray-600/15 p-1"
                 value={Input}
               >
                 <option value="dark">Dark</option>
